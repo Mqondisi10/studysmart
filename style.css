@@ -1,0 +1,51 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f4f4f4;
+}
+
+header {
+    background: #0077cc;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+nav {
+    text-align: center;
+    margin: 15px;
+}
+
+input {
+    padding: 10px;
+    width: 60%;
+}
+
+#books {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.book {
+    background: white;
+    margin: 10px;
+    padding: 15px;
+    width: 200px;
+    box-shadow: 0 0 5px gray;
+    text-align: center;
+}
+
+button {
+    padding: 10px;
+    background: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#cart {
+    background: white;
+    margin: 20px;
+    padding: 15px;
+}
