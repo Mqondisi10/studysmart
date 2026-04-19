@@ -58,3 +58,57 @@ function searchBooks() {
 
 // Load books when page starts
 displayBooks(books);
+// REGISTER FUNCTION
+function register() {
+    const username = document.getElementById("regUsername").value;
+    const password = document.getElementById("regPassword").value;
+
+    if (username === "" || password === "") {
+        alert("Please fill all fields");
+        return;
+    }
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    users.push({ username, password });
+
+    localStorage.setItem("users", JSON.stringify(users));
+
+    alert("Registration successful!");
+    window.location.href = "login.html";
+}
+
+
+// LOGIN FUNCTION
+function login() {
+    const username = document.getElementById("loginUsername").value;
+    const password = document.getElementById("loginPassword").value;
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    const user = users.find(u => u.username === username && u.password === password);
+
+    if (user) {
+        localStorage.setItem("loggedInUser", username);
+        alert("Login successful!");
+        window.location.href = "index.html";
+    } else {
+        alert("Invalid username or password");
+    }
+}
+
+
+// CHECK LOGIN (protect index.html)
+function checkLogin() {
+    const user = localStorage.getItem("loggedInUser");
+
+    if (!user) {
+        alert("Please login first!");
+        window.location.href = "login.html";
+    }
+}
+function logout() {
+    localStorage.removeItem("loggedInUser");
+    alert("Logged out!");
+    window.location.href = "login.html";
+}

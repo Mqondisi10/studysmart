@@ -5,7 +5,7 @@
     <title>StudySmart Hub</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="checkLogin()">
 
 <header>
     <h1>StudySmart Hub</h1>
@@ -25,7 +25,7 @@
     <ul id="cart-items"></ul>
     <button onclick="checkout()">Checkout</button>
 </section>
-
+<button onclick="logout()">Logout</button>
 <script src="script.js"></script>
 </body>
 </html>
